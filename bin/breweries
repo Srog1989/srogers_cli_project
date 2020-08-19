@@ -1,0 +1,6 @@
+require_relative "../lib/weather.rb"
+
+Weather::Cli.new.greeting
+
+website = Breweries::Api.gather_data
+puts website
