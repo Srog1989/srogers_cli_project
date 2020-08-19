@@ -1,6 +1,6 @@
-require_relative "../lib/weather/version"
-require_relative "../lib/weather/cli"
-require_relative "../lib/weather/api"
+require_relative "../lib/breweries/version"
+require_relative "../lib/breweries/cli"
+require_relative "../lib/breweries/api"
 
 module Weather
   class Error < StandardError; end
