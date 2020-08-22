@@ -1,6 +1,5 @@
-require_relative "../lib/weather.rb"
+require_relative "../lib/breweries.rb"
 
-Weather::Cli.new.greeting
+Breweries::Cli.new.greeting
 
-website = Breweries::Api.gather_data
-puts website
+Breweries::Api.brewery_location

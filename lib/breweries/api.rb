@@ -1,6 +1,7 @@
 require 'open-uri'
  require 'json'
 require 'net/http'
+require 'pry'
 class Breweries::Api
  URL = "https://api.openbrewerydb.org/breweries/search?query=dog"
     def self.gather_data
@@ -10,11 +11,18 @@ class Breweries::Api
        #binding.pry
     end
     def self.brewery_location
-     brewery=JSON.parse(self.gather_data)
-      brewery.collect do |brewery|
-       brewery["name"]
+     breweries=JSON.parse(self.gather_data)
+      breweries.each do |brewery|
+          brewery.collect do |attribute,value|
+            binding.pry
+            if attribute == "name"
+              puts value
+            end
+          end
+        end
+      # puts breweries
       end
-    end
+    
 end
 # def program_school
 # # we use the JSON library to parse the API response into nicely formatted JSON
