@@ -14,7 +14,7 @@ class Breweries::Api
      breweries=JSON.parse(self.gather_data)
       breweries.each do |brewery|
           brewery.collect do |attribute,value|
-            binding.pry
+            # binding.pry
             if attribute == "name"
               puts value
             end

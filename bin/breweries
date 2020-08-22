@@ -2,4 +2,4 @@ require_relative "../lib/breweries.rb"
 
 Breweries::Cli.new.greeting
 
-Breweries::Api.brewery_location
+
