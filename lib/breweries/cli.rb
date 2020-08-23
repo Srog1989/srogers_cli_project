@@ -5,9 +5,8 @@ class Breweries::Cli
     puts "\nHi, and welcome to the Breweries Cli!\n"
     get_brewery_locations
     list_locations
-    
-    #gets Breweries for location
-    #list_breweries
+    get_user_location
+    #show_breweries
     
   end
     
@@ -24,8 +23,17 @@ class Breweries::Cli
     end
     
     def get_user_location
-      chosen_location = gets.strip
-    binding.pry
+        chosen_location = gets.strip.to_i
+       show_breweries(chosen_location) if valid(chosen_location, @locations)
+    end
+    
+    def valid(input, data)
+      input.to_i <= data.length && input.to_i > 0 
+    end
+    
+    def show_breweries(chosen_location)
+      location = @locations[chosen_location -1]
+       puts "Here are breweries for #{location}"
     end
   
   
