@@ -1,4 +1,4 @@
-class Brewery_Names::Cli
+class Names::Cli
      attr_accessor :name
    @@all = []
    def initialize(name)

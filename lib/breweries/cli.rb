@@ -36,7 +36,7 @@ class Breweries::Cli
     
     def show_breweries(chosen_location)
       location = @locations[chosen_location -1]
-       puts "Here are breweries for #{location}"
+       puts "Here are breweries for #{location.name}"
       # binding.pry
     end
   
