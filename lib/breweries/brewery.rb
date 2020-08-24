@@ -24,6 +24,9 @@ class Breweries::Brewery
       @@states.uniq
     end
     
+    def self.find_breweries_by_state(state)
+     brewery = @@all.select {|brewery| brewery.state == state}
+    end
 end
 
 #a location is a hash 

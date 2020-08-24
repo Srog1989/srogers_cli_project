@@ -2,6 +2,5 @@ require_relative "../lib/breweries.rb"
 
 Breweries::Cli.new.greeting
 
-Breweries::Brewery.get_brewery_locations
 
 
