@@ -1,6 +1,6 @@
 require_relative "../lib/breweries/version"
 require_relative "../lib/breweries/cli"
-require_relative "../lib/breweries/location"
+require_relative "../lib/breweries/brewery"
 require_relative "../lib/breweries/api"
 require 'open-uri'
 require 'json'

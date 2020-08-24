@@ -12,10 +12,10 @@ class Breweries::Api
       breweries.each do |brewery|
           brewery.each do |attribute,value|
             if attribute == "state"
-              @name = value
+              @state = value
             elsif attribute == "name"
-              @brewery_name = value
-            Breweries::Location.new(@name, @brewery_name)
+              @name = value
+            Breweries::Brewery.new(@state, @name)
             end
           end
         end
