@@ -11,11 +11,14 @@ class Breweries::Location
     def self.all
       Breweries::Api.brewery_location if @@all.empty?
        @@all
+      # binding.pry
    end
    
    def save
      @@all << self
-   end
+    end
   
-  
+    # def find_brewery_name
+    # @locations.collect{|name| location.name}.uniq
+    # end
 end

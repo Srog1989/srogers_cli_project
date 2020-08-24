@@ -11,6 +11,7 @@ class Breweries::Cli
     
     def get_brewery_locations
       @locations = Breweries::Location.all
+      
     end
     
     def list_locations
@@ -35,8 +36,14 @@ class Breweries::Cli
     def show_breweries(chosen_location)
       location = @locations[chosen_location -1]
        puts "Here are breweries for #{location.name}"
+       brewery_name = location.brewery_name
+       puts "#{brewery_name}"
       # binding.pry
     end
+    
+    # def find_brewery_name
+    # @locations.collect{|location| location.name}.uniq
+    # end
   
   
 end

@@ -1,8 +1,9 @@
 class Names::Cli
-     attr_accessor :name
+     attr_accessor :name, :location
    @@all = []
    def initialize(name)
      @name = name
+     @location = location
      save
     end 
      
