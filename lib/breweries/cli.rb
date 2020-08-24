@@ -5,8 +5,6 @@ class Breweries::Cli
     get_brewery_locations
     list_locations
     get_user_location
-    show_breweries
-    
   end
    
     
@@ -37,14 +35,9 @@ class Breweries::Cli
     def show_breweries(chosen_location)
       state = @states[chosen_location -1]
        puts "Here are breweries for #{state}"
-       brewery = Breweries::Brewery.find_breweries_by_state(state)
-       puts "#{brewery}"
-      # binding.pry
+       brewery_names = Breweries::Brewery.find_breweries_by_state(state)
+       brewery_names.each{|brewery_name|
+       puts "#{brewery_name}"}
     end
-    
-    # def find_brewery_name
-    # @locations.collect{|location| location.name}.uniq
-    # end
-  
   
 end

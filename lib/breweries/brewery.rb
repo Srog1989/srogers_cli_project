@@ -24,6 +24,8 @@ class Breweries::Brewery
     end
     
     def self.find_breweries_by_state(state)
-     brewery = @@all.select {|brewery| brewery.state == state}
+     brewery= @@all.select {|brewery| brewery.state == state}
+     brewery_names = brewery.collect(&:name)
+     brewery_names
     end
 end
