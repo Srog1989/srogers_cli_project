@@ -10,8 +10,6 @@ class Breweries::Cli
   end
     
     def get_brewery_locations
-      Breweries::Api.gather_data
-      Breweries::Api.brewery_location
       @locations = Breweries::Location.all
     end
     
