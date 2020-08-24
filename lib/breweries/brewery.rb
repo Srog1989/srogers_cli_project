@@ -13,7 +13,6 @@ class Breweries::Brewery
     def self.all
       Breweries::Api.brewery_location if @@all.empty?
        @@all
-      # binding.pry
    end
    
    def save
@@ -21,14 +20,10 @@ class Breweries::Brewery
     end
     
     def self.states
-      @@states.uniq
+     @@states.uniq
     end
     
     def self.find_breweries_by_state(state)
      brewery = @@all.select {|brewery| brewery.state == state}
     end
 end
-
-#a location is a hash 
-#has keys of state, name, type, etc 
-#those keys would be mirrored in the attributes of your location class, i.e. your attr attr_accessors, etc.

@@ -13,7 +13,6 @@ class Breweries::Cli
     def get_brewery_locations
       Breweries::Brewery.all
       @states = Breweries::Brewery.states
-    
      end
     
     def list_locations
