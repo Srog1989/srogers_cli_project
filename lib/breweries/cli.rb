@@ -1,5 +1,6 @@
 require 'pry'
 class Breweries::Cli
+  
   def greeting
     puts "\nHi, and welcome to the Breweries Cli!\n"
     get_brewery_locations
@@ -7,7 +8,6 @@ class Breweries::Cli
     get_user_location
   end
    
-    
     def get_brewery_locations
       Breweries::Brewery.all
       @states = Breweries::Brewery.states
@@ -34,7 +34,7 @@ class Breweries::Cli
     
     def show_breweries(chosen_location)
       state = @states[chosen_location -1]
-       puts "Here are breweries for #{state}"
+       puts "\nHere are breweries for #{state}.\n"
        brewery_names = Breweries::Brewery.find_breweries_by_state(state)
        brewery_names.each{|brewery_name|
        puts "#{brewery_name}"}

@@ -11,11 +11,12 @@ class Breweries::Api
      breweries=JSON.parse(self.gather_data)
       breweries.each do |brewery|
           brewery.each do |attribute,value|
-            if attribute == "state"
+            if attribute == "name"
+              @name = value 
+            elsif attribute == "state"
               @state = value
-            elsif attribute == "name"
-              @name = value
             Breweries::Brewery.new(@state, @name)
+            # binding.pry
             end
           end
         end

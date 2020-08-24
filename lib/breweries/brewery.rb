@@ -20,7 +20,7 @@ class Breweries::Brewery
     end
     
     def self.states
-     @@states.uniq
+     @@states.uniq.sort
     end
     
     def self.find_breweries_by_state(state)
