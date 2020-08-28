@@ -2,11 +2,15 @@ require 'pry'
 class Breweries::Cli
   
   def greeting
-    puts "\nHi, and welcome to the Breweries Cli!\n"
+    puts "\nWelcome to the Breweries Cli!\n"
     get_brewery_locations
     list_locations
     get_user_location
+    next_action
+    exit_program
   end
+      
+   
    
     def get_brewery_locations
       Breweries::Brewery.all
@@ -39,5 +43,25 @@ class Breweries::Cli
        brewery_names.each{|brewery_name|
        puts "#{brewery_name}"}
     end
-  
+    
+    
+    
+    def next_action
+      
+       input = ''
+       while input != 'exit'
+    puts "\nPlease type main menu to return to see a list of breweries in another state, or type exit to exit program.\n"
+    
+    case input 
+      when "main menu"
+        greeting
+  end
+    input = gets.strip
+  end
+end
+
+    def exit_program
+      puts "Thank you for using Breweries Cli!"
+      exit!
+    end
 end
