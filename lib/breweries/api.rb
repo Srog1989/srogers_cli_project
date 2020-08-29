@@ -10,15 +10,9 @@ class Breweries::Api
     def self.brewery_location
      breweries=JSON.parse(self.gather_data)
       breweries.each do |brewery|
-          brewery.each do |attribute,value|
-            if attribute == "name"
-              @name = value 
-            elsif attribute == "state"
-              @state = value
-            Breweries::Brewery.new(@state, @name)
-            # binding.pry
-            end
-          end
+          state = brewery["state"]
+          name = brewery["name"]
+            Breweries::Brewery.new(state, name)
         end
       end
       

@@ -4,6 +4,10 @@ class Breweries::Cli
   def greeting
     puts "\nWelcome to the Breweries Cli!\n"
     get_brewery_locations
+    main_menu
+  end
+    
+   def main_menu
     list_locations
     get_user_location
     next_action
@@ -54,7 +58,8 @@ class Breweries::Cli
     
     case input 
       when "main menu"
-        greeting
+        main_menu
+        
   end
     input = gets.strip
   end
@@ -65,3 +70,6 @@ end
       exit!
     end
 end
+
+
+
