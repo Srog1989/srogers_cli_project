@@ -3,7 +3,8 @@ class Breweries::Cli
   
   def greeting
     puts "\nWelcome to the Breweries Cli!\n"
-    get_brewery_locations
+    Breweries::Api.brewery_info
+    get_brewery_states
     main_menu
   end
     
@@ -16,8 +17,7 @@ class Breweries::Cli
       
    
    
-    def get_brewery_locations
-      Breweries::Brewery.all
+    def get_brewery_states
       @states = Breweries::Brewery.states
      end
     
@@ -53,8 +53,10 @@ class Breweries::Cli
     def next_action
       
        input = ''
+       puts "\nPlease type main menu to return to see a list of breweries in another state, or type exit to exit program.\n"
+
        while input != 'exit'
-    puts "\nPlease type main menu to return to see a list of breweries in another state, or type exit to exit program.\n"
+    # puts "\nPlease type main menu to return to see a list of breweries in another state, or type exit to exit program.\n"
     
     case input 
       when "main menu"

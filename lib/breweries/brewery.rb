@@ -11,7 +11,6 @@ class Breweries::Brewery
     end 
      
     def self.all
-      Breweries::Api.brewery_location if @@all.empty?
        @@all
    end
    

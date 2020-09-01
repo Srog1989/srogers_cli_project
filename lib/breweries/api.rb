@@ -7,7 +7,7 @@ class Breweries::Api
        response.body
     end
     
-    def self.brewery_location
+    def self.brewery_info
      breweries=JSON.parse(self.gather_data)
       breweries.each do |brewery|
           state = brewery["state"]
