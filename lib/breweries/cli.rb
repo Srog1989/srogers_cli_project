@@ -21,8 +21,9 @@ class Breweries::Cli
   
   def list_states
     puts "\nSelect a number to see breweries.\n"
-    @states.each.with_index(1) {|state, index|
-    puts "#{index}. #{state}"}
+    @states.each.with_index(1) do |state, index|
+      puts "#{index}. #{state}"
+    end
   end
   
   def get_user_state
@@ -34,7 +35,7 @@ class Breweries::Cli
     end
   end
   
-  def valid(chosen_state, @states)
+  def valid(chosen_state, states)
     chosen_state <= @states.length && chosen_state > 0 
   end
   
@@ -44,16 +45,17 @@ class Breweries::Cli
       brewery_names = Breweries::Brewery.find_breweries_by_state(user_state)
       brewery_names.each{|brewery_name|
       puts "#{brewery_name}"}
+      puts "\nPlease type main menu to select another state, or type exit to exit the program.\n"
+
   end
     
   def next_action
     input = ''
     while input != 'exit'
-      puts "\nPlease type main menu to return to see a list of breweries in another state, or type exit to exit the program.\n"
-          case input 
-        when "main menu"
-          main_menu
-        end
+       case input 
+          when "main menu"
+            main_menu
+          end
       input = gets.strip
     end
   end
